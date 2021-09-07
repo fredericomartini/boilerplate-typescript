@@ -28,7 +28,7 @@
 
 ## Começando
 ```sh
-$ git clone http://gitlab.somosiris.com/backend/nodejs-boilerplate-typescript.git
+$ git clone https://github.com/fredericomartini/boilerplate-typescript.git
 $ cd nodejs-boilerplate-typescript
 ```
 

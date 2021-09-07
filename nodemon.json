@@ -1,0 +1,10 @@
+{
+  "restartable": "rs",
+  "ignore": [".git", "node_modules/*", "*.test.ts", "dist/*", "public/docs/redoc/*"],
+  "verbose": true,
+  "execMap": {
+    "ts": "node --require ts-node/register"
+  },
+  "watch": ["src/", "public/docs/"],
+  "ext": "js,json,ts,yml"
+}

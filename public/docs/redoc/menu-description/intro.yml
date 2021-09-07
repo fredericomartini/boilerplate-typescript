@@ -1,0 +1,12 @@
+|
+  Esta documentação tem como objetivo orientar o desenvolvedor sobre como integrar com o **{{ APP_NAME }}** em nossos serviços.
+
+  O mecanismo de integração com o **{{ APP_NAME }}** é simples e foi desenvolvido respeitando o estilo de arquitetura **REST** de modo que
+  conhecimentos intermediários em linguagem de programação, `http/https` e manipulação de arquivos [JSON](https://www.json.org/), são necessários
+  pra desenvolver esta integração.
+
+  Nesta documentação você encontrará exemplos de operações de consulta e manipulação de dados disponíveis para **{{ APP_NAME }}**.
+  <style>
+  body {
+  text-align: justify}
+  </style>

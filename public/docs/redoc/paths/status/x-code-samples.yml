@@ -1,0 +1,23 @@
+- lang: CURL
+  source: |
+    curl -X GET \
+      http://{{ HOST_NAME }}/status
+
+- lang: NodejS Request
+  source: |
+    const request = require('request');
+
+    const options = {
+      method: 'GET',
+      url:
+        'http://{{ HOST_NAME }}/status',
+      json: true,
+    };
+
+    request(options, function(error, response, body) {
+      if (error) {
+        throw new Error(error);
+      }
+
+      console.log(body);
+    });

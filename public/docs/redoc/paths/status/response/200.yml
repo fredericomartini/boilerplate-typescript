@@ -1,0 +1,9 @@
+type: object
+description: Retorna sucesso da requisição.
+required:
+  - up
+properties:
+  up:
+    type: boolean
+    description: Identificador do status do serviço.
+    example: true

@@ -1,0 +1,43 @@
+swagger: "2.0"
+schemes:
+  - https
+consumes:
+  - application/json
+  - multipart/form-data
+produces:
+  - application/json
+info:
+  version: 1.0
+  title: "{{ APP_NAME }}"
+  x-logo:
+    url: "../docs/img/logo.png"
+
+tags:
+  # GERAL
+  - name: Introdução
+    description:
+      $ref: "./menu-description/intro.yml"
+
+  - name: Autenticação
+    description:
+      $ref: "./menu-description/auth.yml"
+
+  - name: Respostas e erros
+    description:
+      $ref: "./menu-description/response-errors.yml"
+
+  #ROTAS
+  - name: status
+    description: Rota disponível para verificação do status da aplicação.
+
+x-tagGroups:
+  - name: Geral
+    tags:
+      - Introdução
+      - Autenticação
+      - Respostas e erros
+  - name: Rotas
+    tags:
+      - status
+paths:
+  $ref: "./paths/index.yml"

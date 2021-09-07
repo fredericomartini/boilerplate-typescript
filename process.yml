@@ -1,0 +1,5 @@
+apps:
+  - script: "dist/index.js"
+    name: "nodejs-boilerplate-typescript"
+    exec_mode: "cluster"
+    instances: "max"

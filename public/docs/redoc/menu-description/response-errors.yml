@@ -1,0 +1,8 @@
+|
+  Os códigos de resposta indicam sucesso ou falha no processamento de dados.
+
+  Os códigos com intervalos `2XX` indica que a solicitação foi aceita e processada..
+
+  Os códigos com intervalos `4XX` indica um problema com a solicitação e você possívelmente receberá uma mensagem indicando o problema.
+
+  O código `500` indica um erro interno em nosso servidor.

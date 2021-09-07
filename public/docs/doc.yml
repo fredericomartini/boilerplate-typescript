@@ -1,0 +1,161 @@
+swagger: '2.0'
+schemes:
+  - https
+consumes:
+  - application/json
+  - multipart/form-data
+produces:
+  - application/json
+info:
+  version: 1
+  title: NodeJS Boilerplate
+  x-logo:
+    url: ../docs/img/logo.png
+tags:
+  - name: Introdução
+    description: >
+      Esta documentação tem como objetivo orientar o desenvolvedor sobre como
+      integrar com o **NodeJS Boilerplate** em nossos serviços.
+
+
+      O mecanismo de integração com o **NodeJS Boilerplate** é simples e foi
+      desenvolvido respeitando o estilo de arquitetura **REST** de modo que
+
+      conhecimentos intermediários em linguagem de programação, `http/https` e
+      manipulação de arquivos [JSON](https://www.json.org/), são necessários
+
+      pra desenvolver esta integração.
+
+
+      Nesta documentação você encontrará exemplos de operações de consulta e
+      manipulação de dados disponíveis para **NodeJS Boilerplate**.
+
+      <style>
+
+      body {
+
+      text-align: justify}
+
+      </style>
+  - name: Autenticação
+    description: >
+      Todas as rotas disponíveis nesta api são protegidas por um `header` de
+      autorização.
+
+
+
+      O token de acesso é de uso restrito entre nossos serviços. Sendo assim, é
+      necessário trafegar esta chave via
+
+      [cabeçalho
+      HTTP/HTTPS](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers),
+      mais especificamente o cabeçalho `x-api-key`.
+
+
+      Como no exemplo a seguir:
+
+
+
+      ```json
+        'x-api-key': 6a2be906-7e16-4a3d-8e8f-1551eb0241f3
+      ```
+
+
+
+      ### Application/json
+
+      A estrutura de dados de comunicação adotada é a
+      [JSON](https://www.json.org/). Com isso, Os dados enviados no corpo das
+      requisições
+
+      devem ser codificados no formato `UTF-8`. E os cabeçalhos devem indicar
+      `Content-Type: application/json`.
+        <style>
+        body {
+        text-align: justify}
+        </style>
+
+
+      Exemplo de cabeçalhos que sempre devem ser enviados:
+
+
+      ```json
+
+      'x-api-key': 6a2be906-7e16-4a3d-8e8f-1551eb0241f3
+
+      'Content-Type': application/json
+
+      ```
+  - name: Respostas e erros
+    description: >
+      Os códigos de resposta indicam sucesso ou falha no processamento de dados.
+
+
+      Os códigos com intervalos `2XX` indica que a solicitação foi aceita e
+      processada..
+
+
+      Os códigos com intervalos `4XX` indica um problema com a solicitação e
+      você possívelmente receberá uma mensagem indicando o problema.
+
+
+      O código `500` indica um erro interno em nosso servidor.
+  - name: status
+    description: Rota disponível para verificação do status da aplicação.
+x-tagGroups:
+  - name: Geral
+    tags:
+      - Introdução
+      - Autenticação
+      - Respostas e erros
+  - name: Rotas
+    tags:
+      - status
+paths:
+  /status:
+    get:
+      tags:
+        - status
+      summary: Verificação do status do serviço
+      description: Detalha se serviço está `up` rodando.
+      operationId: status
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Ok.
+          schema:
+            type: object
+            description: Retorna sucesso da requisição.
+            required:
+              - up
+            properties:
+              up:
+                type: boolean
+                description: Identificador do status do serviço.
+                example: true
+      x-code-samples:
+        - lang: CURL
+          source: |
+            curl -X GET \
+              http://nodejs-boilerplate.com/status
+        - lang: NodejS Request
+          source: |
+            const request = require('request');
+
+            const options = {
+              method: 'GET',
+              url:
+                'http://nodejs-boilerplate.com/status',
+              json: true,
+            };
+
+            request(options, function(error, response, body) {
+              if (error) {
+                throw new Error(error);
+              }
+
+              console.log(body);
+            });

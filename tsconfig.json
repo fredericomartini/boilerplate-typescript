@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "lib": ["dom", "es6", "es2017", "esnext.asynciterable"],
+    "sourceMap": true,
+    "outDir": "./dist",
+    "moduleResolution": "node",
+    "declaration": false,
+    "composite": false,
+    "removeComments": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": false,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "baseUrl": "./src",
+    "rootDir": "./src",
+    "allowJs": false,
+    "paths": {
+      "@tests/*": ["__tests__/*"],
+      "@config/*": ["config/*"],
+      "@helpers/*": ["common/helpers/*"],
+      "@middlewares/*": ["common/middlewares/*"],
+      "@services/*": ["common/services/*"],
+      "@adapters/*": ["common/adapters/*"],
+      "@typeDefs/*": ["common/typeDefs/*"],
+      "@modules/*": ["modules/*"],
+    }
+  },
+  "exclude": ["node_modules", "dist"],
+  "include": ["src/**/*.ts", "src/index.js", "src/index.js"],
+  "ts-node": {
+    "transpileOnly": true
+  },
+  "typeRoots": [
+    "@types",
+    "./node_modules/@types",
+  ]
+}

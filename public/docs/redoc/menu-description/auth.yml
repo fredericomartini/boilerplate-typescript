@@ -1,0 +1,30 @@
+|
+  Todas as rotas disponíveis nesta api são protegidas por um `header` de autorização.
+
+
+  O token de acesso é de uso restrito entre nossos serviços. Sendo assim, é necessário trafegar esta chave via
+  [cabeçalho HTTP/HTTPS](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers), mais especificamente o cabeçalho `x-api-key`.
+
+  Como no exemplo a seguir:
+
+
+  ```json
+    'x-api-key': 6a2be906-7e16-4a3d-8e8f-1551eb0241f3
+  ```
+
+
+  ### Application/json
+  A estrutura de dados de comunicação adotada é a [JSON](https://www.json.org/). Com isso, Os dados enviados no corpo das requisições
+  devem ser codificados no formato `UTF-8`. E os cabeçalhos devem indicar `Content-Type: application/json`.
+    <style>
+    body {
+    text-align: justify}
+    </style>
+
+
+  Exemplo de cabeçalhos que sempre devem ser enviados:
+
+  ```json
+  'x-api-key': 6a2be906-7e16-4a3d-8e8f-1551eb0241f3
+  'Content-Type': application/json
+  ```

@@ -1,0 +1,20 @@
+################################# Service Status #################################
+get:
+  tags:
+    - status
+  summary: Verificação do status do serviço
+  description: "Detalha se serviço está `up` rodando."
+
+  operationId: status
+  consumes:
+    - application/json
+  produces:
+    - application/json
+
+  responses:
+    200:
+      description: Ok.
+      schema:
+        $ref: "./response/200.yml"
+  x-code-samples:
+    $ref: "./x-code-samples.yml"

@@ -29,7 +29,7 @@
 ## Começando
 ```sh
 $ git clone https://github.com/fredericomartini/boilerplate-typescript.git
-$ cd nodejs-boilerplate-typescript
+$ cd boilerplate-typescript
 ```
 
 Instale as dependencias com npm
